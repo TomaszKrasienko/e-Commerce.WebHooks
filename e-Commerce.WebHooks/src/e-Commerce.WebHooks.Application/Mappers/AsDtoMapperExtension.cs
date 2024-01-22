@@ -7,4 +7,7 @@ internal static class AsDtoMapperExtensions
 {
     public static EventDto AsDto(this Event @event)
         => new EventDto(@event.Id, @event.TypeName);
+
+    public static AddressDto AsDto(this Address address)
+        => new AddressDto(address.Id, address.Url, address.EventId);
 }

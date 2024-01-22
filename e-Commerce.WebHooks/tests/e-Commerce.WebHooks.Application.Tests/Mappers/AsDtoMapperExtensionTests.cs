@@ -21,4 +21,24 @@ public class AsDtoMapperExtensionsTests
         result.Id.Should().Be(@event.Id);
         result.TypeName.Should().Be(@event.TypeName);
     }
+
+    [Fact]
+    public void AsDto_ForAddress_ShouldReturnAddressDto()
+    {
+        //arrange
+        var @event = new Event(Guid.NewGuid(), "TestTypeName");
+        var addressId = Guid.NewGuid();
+        var addressUrl = "testUrl";
+        @event.AddAddress(addressId, addressUrl);
+        var address = @event.Addresses.Single(x => x.Id.Value == addressId);
+        
+        //act
+        var result = address.AsDto();
+        
+        //assert
+        result.Should().BeOfType<AddressDto>();
+        result.Id.Should().Be(addressId);
+        result.Url.Should().Be(addressUrl);
+        result.EventId.Should().Be(@event.Id.Value);
+    }
 }
