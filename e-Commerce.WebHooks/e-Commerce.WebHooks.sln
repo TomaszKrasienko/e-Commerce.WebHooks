@@ -1,8 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B20E734B-5D14-4A99-BA6F-0269B05BC78A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3CEF04B8-EA54-4C87-9B70-16AC790BB32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Commerce.WebHooks.Core", "src\e-Commerce.WebHooks.Core\e-Commerce.WebHooks.Core.csproj", "{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F} = {B20E734B-5D14-4A99-BA6F-0269B05BC78A}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
