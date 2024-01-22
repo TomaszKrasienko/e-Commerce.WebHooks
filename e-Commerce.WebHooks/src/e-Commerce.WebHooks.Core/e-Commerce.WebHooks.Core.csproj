@@ -5,10 +5,6 @@
         <RootNamespace>e_Commerce.WebHooks.Core</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include="Repositories\" />
-    </ItemGroup>
     <ItemGroup>
         <InternalsVisibleTo Include="e-Commerce.WebHooks.Core.Tests"/>
     </ItemGroup>
