@@ -9,4 +9,5 @@ public interface IEventRepository
     Task AddAsync(Event @event);
     Task UpdateAsync(Event @event);
     Task DeleteAsync(Guid id);
+    Task<bool> IsExistsAsync(string typeName, Guid id);
 }
