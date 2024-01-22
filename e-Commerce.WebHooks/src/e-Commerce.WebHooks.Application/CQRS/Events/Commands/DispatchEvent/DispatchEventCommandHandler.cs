@@ -1,3 +1,6 @@
+using e_Commerce.WebHooks.Application.DTOs;
+using e_Commerce.WebHooks.Application.Exceptions;
+using e_Commerce.WebHooks.Application.Mappers;
 using e_Commerce.WebHooks.Application.Services;
 using e_Commerce.WebHooks.Core.Repositories;
 using MediatR;
@@ -15,8 +18,15 @@ internal sealed class DispatchEventCommandHandler : INotificationHandler<Dispatc
         _webHookDispatcher = webHookDispatcher;
     }
 
-    public Task Handle(DispatchEventCommand notification, CancellationToken cancellationToken)
+    public async Task Handle(DispatchEventCommand notification, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var @event = await _eventRepository.GetByTypeNameAsync(notification.EventTypeName);
+        if (@event is null)
+        {
+            throw new EventNotFoundException(notification.EventTypeName);
+        }
+
+        var dto = notification.AsDto();
+        await _webHookDispatcher.Send(dto, @event.Addresses.Select(x => x.Url.Value).ToList());
     }
 }

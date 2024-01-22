@@ -4,5 +4,5 @@ namespace e_Commerce.WebHooks.Application.Services;
 
 public interface IWebHookDispatcher
 {
-    Task Send(WebHookDto dto);
+    Task Send(WebHookDto dto, List<string> addresses);
 }

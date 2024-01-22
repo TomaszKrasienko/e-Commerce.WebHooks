@@ -19,7 +19,7 @@ POST {{url}}/addresses/add-address
 Content-Type: application/json
 
 {
-    "url": "http://tmp3.pl",
+    "url": "http://tmp1.pl",
     "eventTypeName": "{{typeName}}"
 }
 

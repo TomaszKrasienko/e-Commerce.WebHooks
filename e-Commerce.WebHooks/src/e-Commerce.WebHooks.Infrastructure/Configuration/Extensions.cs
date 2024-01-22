@@ -2,6 +2,7 @@ using e_Commerce.WebHooks.Infrastructure.DAL.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Exceptions.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Logging.Configuration;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -52,5 +53,12 @@ public static class Extensions
             reDoc.SpecUrl = "/swagger/v1/swagger.json";
         });
         return app;
+    }
+
+    public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
+    {
+        T t = new T();
+        configuration.Bind(sectionName, t);
+        return t;
     }
 }
