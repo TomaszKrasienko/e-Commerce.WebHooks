@@ -1,4 +1,3 @@
-using System.Data.Common;
 using e_Commerce.WebHooks.Core.ValueObjects;
 using e_Commerce.WebHooks.Core.ValueObjects.Event;
 
@@ -8,6 +7,7 @@ public sealed class Event
 {
     public EntityId Id { get; private set; }
     public TypeName TypeName { get; private set; }
+    public List<Address> Addresses { get; private set; }
 
     public Event(EntityId id, TypeName typeName)
     {
