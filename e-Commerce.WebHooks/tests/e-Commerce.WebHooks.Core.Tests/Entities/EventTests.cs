@@ -42,4 +42,22 @@ public sealed class EventTests
         //assert
         exception.Should().BeOfType<EmptyTypeNameException>();
     }
+
+    [Fact]
+    public void AddAddress_ForNotExistingAddress_ShouldAddToAddresses()
+    {
+        //arrange
+        var @event = new Event(Guid.NewGuid(), "testTypeName");
+        var addressId = Guid.NewGuid();
+        var addressUrl = "test_url";
+
+        //act
+        @event.AddAddress(addressId, addressUrl);
+        
+        //assert
+        @event.Addresses.Any(x
+            => x.Id.Value == addressId
+               && x.Url == addressUrl
+               && x.EventId == @event.Id).Should().BeTrue();
+    }
 }
