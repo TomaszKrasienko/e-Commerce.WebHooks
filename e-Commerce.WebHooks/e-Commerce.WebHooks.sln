@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Commerce.WebHooks.Core.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Commerce.WebHooks.Application", "src\e-Commerce.WebHooks.Application\e-Commerce.WebHooks.Application.csproj", "{98C32F38-81D6-4E16-A9CF-E2EFF59C5CB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Commerce.WebHooks.Application.Tests", "tests\e-Commerce.WebHooks.Application.Tests\e-Commerce.WebHooks.Application.Tests.csproj", "{CD964EB1-D0F7-4366-9016-AF2B2B7F496B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,7 @@ Global
 		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F} = {B20E734B-5D14-4A99-BA6F-0269B05BC78A}
 		{71A88B1E-3904-4AAE-885C-67FA2900680A} = {3CEF04B8-EA54-4C87-9B70-16AC790BB32A}
 		{98C32F38-81D6-4E16-A9CF-E2EFF59C5CB0} = {B20E734B-5D14-4A99-BA6F-0269B05BC78A}
+		{CD964EB1-D0F7-4366-9016-AF2B2B7F496B} = {3CEF04B8-EA54-4C87-9B70-16AC790BB32A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ED665FD6-ADA2-4922-8FA2-A3AB11AD703F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,5 +36,9 @@ Global
 		{98C32F38-81D6-4E16-A9CF-E2EFF59C5CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98C32F38-81D6-4E16-A9CF-E2EFF59C5CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98C32F38-81D6-4E16-A9CF-E2EFF59C5CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD964EB1-D0F7-4366-9016-AF2B2B7F496B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD964EB1-D0F7-4366-9016-AF2B2B7F496B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD964EB1-D0F7-4366-9016-AF2B2B7F496B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD964EB1-D0F7-4366-9016-AF2B2B7F496B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
