@@ -9,7 +9,7 @@ public sealed class Address
     public Url Url { get; private set; }
     public EntityId EventId { get; private set; }
 
-    public Address(EntityId id, Url url, EntityId eventId)
+    internal Address(EntityId id, Url url, EntityId eventId)
     {
         Id = id;
         Url = url;
