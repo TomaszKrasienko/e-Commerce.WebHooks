@@ -76,4 +76,34 @@ public sealed class EventTests
         //assert
         exception.Should().BeOfType<AddressAlreadyRegisteredException>();
     }
+
+    [Fact]
+    public void DeleteAddress_ForExistingAddress_ShouldDeleteAddressFromAddressesList()
+    {
+        //arrange
+        var @event = new Event(Guid.NewGuid(), "testTypeName");
+        var addressId = Guid.NewGuid();
+        var addressUrl = "test_url";
+        @event.AddAddress(addressId, addressUrl);
+        
+        //act
+        @event.DeleteAddress(addressId);
+        
+        //assert
+        @event.Addresses.Any(x => x.Id.Value == addressId).Should().BeFalse();
+    }
+    
+    [Fact]
+    public void DeleteAddress_ForNotExistingAddress_ShouldThrowAddressNotFoundException()
+    {
+        //arrange
+        var @event = new Event(Guid.NewGuid(), "testTypeName");
+        var addressId = Guid.NewGuid();
+        
+        //act
+        var exception = Record.Exception(() => @event.DeleteAddress(addressId));
+        
+        //assert
+        exception.Should().BeOfType<AddressNotFoundException>();
+    }
 }

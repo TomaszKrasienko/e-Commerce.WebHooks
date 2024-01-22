@@ -26,4 +26,9 @@ public sealed class Event
         }
         _addresses.Add(new Address(addressId, url, Id));
     }
+
+    public void DeleteAddress(Guid addressId)
+    {
+
+    }
 }
