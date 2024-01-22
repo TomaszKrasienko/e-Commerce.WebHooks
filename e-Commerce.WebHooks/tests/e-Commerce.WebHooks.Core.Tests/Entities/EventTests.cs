@@ -74,6 +74,6 @@ public sealed class EventTests
         var exception = Record.Exception(() => @event.AddAddress(addressId, addressUrl));
         
         //assert
-        exception.Should().BeOfType<ThrowAddressAlreadyRegisteredException>();
+        exception.Should().BeOfType<AddressAlreadyRegisteredException>();
     }
 }

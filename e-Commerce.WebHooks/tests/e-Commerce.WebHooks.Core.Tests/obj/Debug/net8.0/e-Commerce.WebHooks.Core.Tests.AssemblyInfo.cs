@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("e-Commerce.WebHooks.Core.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c323aa0e2219d94f672a142c0a45a8a8a33995df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87ece3afd53d97fe27f9f36a7081f136e5e447a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("e-Commerce.WebHooks.Core.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("e-Commerce.WebHooks.Core.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

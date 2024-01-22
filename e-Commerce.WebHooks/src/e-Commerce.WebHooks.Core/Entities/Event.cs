@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using e_Commerce.WebHooks.Core.Exceptions;
 using e_Commerce.WebHooks.Core.ValueObjects;
 using e_Commerce.WebHooks.Core.ValueObjects.Event;
 
@@ -19,6 +20,10 @@ public sealed class Event
 
     public void AddAddress(EntityId addressId, string url)
     {
+        if (_addresses.Any(x => x.Id == addressId || x.Url == url))
+        {
+            throw new AddressAlreadyRegisteredException(addressId);
+        }
         _addresses.Add(new Address(addressId, url, Id));
     }
 }
