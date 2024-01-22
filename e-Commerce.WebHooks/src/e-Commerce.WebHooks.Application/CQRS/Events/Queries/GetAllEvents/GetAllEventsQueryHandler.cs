@@ -1,4 +1,6 @@
+using System.Collections.Immutable;
 using e_Commerce.WebHooks.Application.DTOs;
+using e_Commerce.WebHooks.Application.Mappers;
 using e_Commerce.WebHooks.Core.Repositories;
 using MediatR;
 
@@ -9,12 +11,8 @@ internal sealed class GetAllEventsQueryHandler : IRequestHandler<GetAllEventsQue
     private readonly IEventRepository _eventRepository;
 
     public GetAllEventsQueryHandler(IEventRepository eventRepository)
-    {
-        _eventRepository = eventRepository;
-    }
+        => _eventRepository = eventRepository;
 
-    public Task<IReadOnlyList<EventDto>> Handle(GetAllEventsQuery request, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IReadOnlyList<EventDto>> Handle(GetAllEventsQuery request, CancellationToken cancellationToken)
+        => (await _eventRepository.GetAllAsync()).Select(x => x.AsDto()).ToImmutableList();
 }
