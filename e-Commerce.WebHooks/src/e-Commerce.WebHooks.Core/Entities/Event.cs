@@ -16,4 +16,9 @@ public sealed class Event
         Id = id;
         TypeName = typeName;
     }
+
+    public void AddAddress(EntityId addressId, string url)
+    {
+        _addresses.Add(new Address(addressId, url, Id));
+    }
 }
