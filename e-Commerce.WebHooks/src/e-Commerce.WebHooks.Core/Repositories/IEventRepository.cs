@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using e_Commerce.WebHooks.Core.Entities;
 
 namespace e_Commerce.WebHooks.Core.Repositories;

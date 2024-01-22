@@ -5,33 +5,29 @@ namespace e_Commerce.WebHooks.Infrastructure.DAL.Repositories;
 
 internal sealed class InMemoryEventRepository : IEventRepository
 {
+    private readonly List<Event> _hosts = new List<Event>();
+
     public Task<IReadOnlyList<Event>> GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
+        => Task.FromResult((IReadOnlyList<Event>)_hosts);
+
 
     public Task<Event> GetByTypeNameAsync(string typeName)
-    {
-        throw new NotImplementedException();
-    }
+        => Task.FromResult(_hosts.SingleOrDefault(x => x.TypeName == typeName));
 
     public Task<Event> GetByAddressIdAsync(Guid addressId)
-    {
-        throw new NotImplementedException();
-    }
+        => Task.FromResult(_hosts.SingleOrDefault(x => x.Addresses.Any(y => y.Id.Value == addressId)));
 
     public Task AddAsync(Event @event)
     {
-        throw new NotImplementedException();
+        _hosts.Add(@event);
+        return Task.CompletedTask;
     }
 
     public Task UpdateAsync(Event @event)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 
     public Task<bool> IsExistsAsync(string typeName, Guid id)
-    {
-        throw new NotImplementedException();
-    }
+        => Task.FromResult(_hosts.Any(y => y.TypeName == typeName || y.Id.Value == id));
 }
