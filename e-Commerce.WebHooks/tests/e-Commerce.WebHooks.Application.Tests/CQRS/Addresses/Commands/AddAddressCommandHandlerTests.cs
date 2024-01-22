@@ -53,7 +53,7 @@ public sealed class AddAddressCommandHandlerTests
     public AddAddressCommandHandlerTests()
     {
         _eventRepositoryMock = new Mock<IEventRepository>();
-        _handler = new AddAddressCommandHandler();
+        _handler = new AddAddressCommandHandler(_eventRepositoryMock.Object);
     }
     #endregion
 }
