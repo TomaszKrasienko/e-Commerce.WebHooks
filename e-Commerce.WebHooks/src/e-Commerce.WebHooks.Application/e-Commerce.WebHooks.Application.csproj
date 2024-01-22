@@ -16,4 +16,7 @@
     <ItemGroup>
         <InternalsVisibleTo Include="e-Commerce.WebHooks.Application.Tests"/>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="CQRS\Events\Queries\" />
+    </ItemGroup>
 </Project>
