@@ -8,6 +8,12 @@ public static class Extensions
     public static IServiceCollection AddConfiguration(this IServiceCollection services)
         => services
             .AddApplication()
-            .AddInfrastructure();
-    
+            .AddInfrastructure()
+            .AddControllersConfiguration();
+
+    private static IServiceCollection AddControllersConfiguration(this IServiceCollection services)
+    {
+        services.AddControllers();
+        return services;
+    }
 }

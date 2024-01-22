@@ -1,3 +1,4 @@
+using e_Commerce.WebHooks.Infrastructure.DAL.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Exceptions.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Logging.Configuration;
 using Microsoft.AspNetCore.Builder;
@@ -13,7 +14,9 @@ public static class Extensions
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         => services
             .AddExceptionHandling()
-            .AddLoggingConfiguration();
+            .AddLoggingConfiguration()
+            .AddDal()
+            .AddSwaggerConfiguration();
 
     private static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
     {
@@ -46,7 +49,7 @@ public static class Extensions
         {
             reDoc.RoutePrefix = "redoc";
             reDoc.DocumentTitle = Title;
-            reDoc.SpecUrl = "swagger/v1/swagger.json";
+            reDoc.SpecUrl = "/swagger/v1/swagger.json";
         });
         return app;
     }

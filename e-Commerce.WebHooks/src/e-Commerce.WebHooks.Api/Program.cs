@@ -1,8 +1,10 @@
+using e_Commerce.WebHooks.Api.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddConfiguration();
 var app = builder.Build();
 app.UseInfrastructure();
 app.UseHttpsRedirection();

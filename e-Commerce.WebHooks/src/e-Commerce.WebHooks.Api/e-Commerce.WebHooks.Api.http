@@ -1,6 +1,13 @@
-@e_Commerce.WebHooks.Api_HostAddress = http://localhost:5013
+@url = http://localhost:5013
 
-GET {{e_Commerce.WebHooks.Api_HostAddress}}/weatherforecast/
-Accept: application/json
 
 ###
+POST {{url}}/events/add-event
+Content-Type: application/json
+
+{
+    "typeName": "first_test"
+}
+
+###
+GET {{url}}/events
