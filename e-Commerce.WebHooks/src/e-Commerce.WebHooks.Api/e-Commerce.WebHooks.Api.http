@@ -1,5 +1,5 @@
 @url = http://localhost:5013
-@typeName = test_first_name1
+@typeName = test_first_name
 @addressId = 61491c50-2cf2-454e-b0e0-22648051f7e5
 
 ###

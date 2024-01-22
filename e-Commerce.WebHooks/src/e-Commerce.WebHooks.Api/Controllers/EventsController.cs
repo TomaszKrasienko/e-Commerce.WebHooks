@@ -3,7 +3,6 @@ using e_Commerce.WebHooks.Application.CQRS.Events.Queries.GetAllEvents;
 using e_Commerce.WebHooks.Application.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace e_Commerce.WebHooks.Api.Controllers;
 

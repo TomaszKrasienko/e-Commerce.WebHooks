@@ -10,7 +10,7 @@ public sealed class Event
     private HashSet<Address> _addresses = new HashSet<Address>();
     public EntityId Id { get; private set; }
     public TypeName TypeName { get; private set; }
-    public IReadOnlyList<Address> Addresses => _addresses.ToImmutableList();
+    public IEnumerable<Address> Addresses => _addresses.ToImmutableList();
 
     public Event(EntityId id, TypeName typeName)
     {
