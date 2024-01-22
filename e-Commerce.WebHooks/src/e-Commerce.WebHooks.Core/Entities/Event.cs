@@ -29,6 +29,12 @@ public sealed class Event
 
     public void DeleteAddress(Guid addressId)
     {
+        if (_addresses.All(x => x.Id.Value != addressId))
+        {
+            throw new AddressNotFoundException(addressId);
+        }
 
+        var address = _addresses.Single(x => x.Id.Value == addressId);
+        _addresses.Remove(address);
     }
 }

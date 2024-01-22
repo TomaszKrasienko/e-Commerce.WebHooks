@@ -6,6 +6,7 @@ public interface IEventRepository
 {
     Task<IReadOnlyList<Event>> GetAllAsync();
     Task<Event> GetByTypeNameAsync(string typeName);
+    Task<Event> GetByAddressId(Guid addressId);
     Task AddAsync(Event @event);
     Task UpdateAsync(Event @event);
     Task DeleteAsync(Guid id);
