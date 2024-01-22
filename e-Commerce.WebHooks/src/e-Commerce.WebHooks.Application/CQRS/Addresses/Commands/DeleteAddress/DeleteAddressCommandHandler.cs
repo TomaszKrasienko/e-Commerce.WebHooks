@@ -1,3 +1,4 @@
+using e_Commerce.WebHooks.Application.Exceptions;
 using e_Commerce.WebHooks.Core.Repositories;
 using MediatR;
 
@@ -12,8 +13,14 @@ internal sealed class DeleteAddressCommandHandler : INotificationHandler<DeleteA
         _eventRepository = eventRepository;
     }
 
-    public Task Handle(DeleteAddressCommand notification, CancellationToken cancellationToken)
+    public async Task Handle(DeleteAddressCommand notification, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var @event = await _eventRepository.GetByAddressIdAsync(notification.Id);
+        if (@event is null)
+        {
+            throw new EventNotFoundForAddressException(notification.Id);
+        }
+        @event.DeleteAddress(notification.Id);
+        await _eventRepository.UpdateAsync(@event);
     }
 }
