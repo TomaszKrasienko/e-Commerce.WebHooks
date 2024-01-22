@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WUiKA8Sa1pY/1zaVSMIQVUQWndc7WbScZdIhbk4t8a6U69jxkYO1brdGXYb7VgFYbUZW77ic45I1iaJz+wGCiQ==",
+  "dgSpecHash": "t2F5yLwlr0t52fFJ6dZaClGyZiRiMMK2cSjqBh8ZiQlTe4FhbFVfFxxpjeFsYBLV3tgLT5it26N7k6iAdn1n0A==",
   "success": true,
   "projectFilePath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/tomaszkrasienko/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
+    "/Users/tomaszkrasienko/.nuget/packages/fluentassertions/7.0.0-alpha.3/fluentassertions.7.0.0-alpha.3.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/microsoft.codecoverage/17.6.0/microsoft.codecoverage.17.6.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/microsoft.net.test.sdk/17.6.0/microsoft.net.test.sdk.17.6.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
@@ -35,6 +36,7 @@
     "/Users/tomaszkrasienko/.nuget/packages/system.buffers/4.3.0/system.buffers.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.collections.concurrent/4.3.0/system.collections.concurrent.4.3.0.nupkg.sha512",
+    "/Users/tomaszkrasienko/.nuget/packages/system.configuration.configurationmanager/4.4.0/system.configuration.configurationmanager.4.4.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.diagnostics.diagnosticsource/4.3.0/system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
@@ -75,6 +77,7 @@
     "/Users/tomaszkrasienko/.nuget/packages/system.security.cryptography.encoding/4.3.0/system.security.cryptography.encoding.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.security.cryptography.openssl/4.3.0/system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.security.cryptography.primitives/4.3.0/system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+    "/Users/tomaszkrasienko/.nuget/packages/system.security.cryptography.protecteddata/4.4.0/system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/tomaszkrasienko/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",

@@ -4,14 +4,14 @@
     "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj": {}
   },
   "projects": {
-    "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj": {
+    "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/e-Commerce.WebHooks.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj",
-        "projectName": "e-Commerce.WebHooks.Core.Tests",
-        "projectPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj",
+        "projectUniqueName": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/e-Commerce.WebHooks.Core.csproj",
+        "projectName": "e-Commerce.WebHooks.Core",
+        "projectPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/e-Commerce.WebHooks.Core.csproj",
         "packagesPath": "/Users/tomaszkrasienko/.nuget/packages/",
-        "outputPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/obj/",
+        "outputPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tomaszkrasienko/.nuget/NuGet/NuGet.Config"
@@ -37,7 +37,68 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj",
+        "projectName": "e-Commerce.WebHooks.Core.Tests",
+        "projectPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/e-Commerce.WebHooks.Core.Tests.csproj",
+        "packagesPath": "/Users/tomaszkrasienko/.nuget/packages/",
+        "outputPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/tests/e-Commerce.WebHooks.Core.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tomaszkrasienko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/e-Commerce.WebHooks.Core.csproj": {
+                "projectPath": "/Users/tomaszkrasienko/Documents/GitRepositories/e-Commerce.WebHooks/e-Commerce.WebHooks/src/e-Commerce.WebHooks.Core/e-Commerce.WebHooks.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[7.0.0-alpha.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.6.0, )"

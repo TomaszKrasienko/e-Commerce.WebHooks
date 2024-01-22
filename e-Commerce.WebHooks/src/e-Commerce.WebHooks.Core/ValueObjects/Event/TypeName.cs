@@ -10,7 +10,7 @@ public record TypeName
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new InvalidTypeNameException();
+            throw new EmptyTypeNameException();
         }
         Value = value;
     }
