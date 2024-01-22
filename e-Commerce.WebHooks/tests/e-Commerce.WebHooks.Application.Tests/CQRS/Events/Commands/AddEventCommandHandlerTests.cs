@@ -18,7 +18,7 @@ public sealed class AddEventCommandHandlerTests
             .Setup(f => f.IsExistsAsync(
                 It.Is<string>(x => x == command.TypeName),
                 It.Is<Guid>(x => x == command.Id)))
-            .ReturnsAsync(true);
+            .ReturnsAsync(false);
         
         //act
         await _handler.Handle(command, default);
@@ -39,7 +39,7 @@ public sealed class AddEventCommandHandlerTests
             .Setup(f => f.IsExistsAsync(
                 It.Is<string>(x => x == command.TypeName),
                 It.Is<Guid>(x => x == command.Id)))
-            .ReturnsAsync(false);
+            .ReturnsAsync(true);
         
         //act
         var exception = await Record.ExceptionAsync(async () => await _handler.Handle(command, default));

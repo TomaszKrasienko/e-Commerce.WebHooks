@@ -1,3 +1,4 @@
+using e_Commerce.WebHooks.Application.Exceptions;
 using e_Commerce.WebHooks.Core.Entities;
 using e_Commerce.WebHooks.Core.Repositories;
 using MediatR;
@@ -17,6 +18,10 @@ internal sealed class AddEventCommandHandler : INotificationHandler<AddEventComm
     {
         var isEventExists = await _eventRepository.IsExistsAsync(notification.TypeName,
             notification.Id);
+        if (isEventExists)
+        {
+            throw new EventAlreadyRegisteredException(notification.TypeName, notification.Id);
+        }
         var @event = new Event(notification.Id, notification.TypeName);
         await _eventRepository.AddAsync(@event);
     }
