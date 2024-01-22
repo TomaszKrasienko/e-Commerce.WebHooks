@@ -25,4 +25,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\e-Commerce.WebHooks.Application\e-Commerce.WebHooks.Application.csproj" />
+    </ItemGroup>
+
 </Project>

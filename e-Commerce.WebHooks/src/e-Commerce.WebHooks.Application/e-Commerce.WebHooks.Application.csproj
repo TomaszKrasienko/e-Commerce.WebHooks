@@ -4,7 +4,6 @@
         <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>e_Commerce.WebHooks.Application</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,5 +13,7 @@
     <ItemGroup>
       <ProjectReference Include="..\e-Commerce.WebHooks.Core\e-Commerce.WebHooks.Core.csproj" />
     </ItemGroup>
-
+    <ItemGroup>
+        <InternalsVisibleTo Include="e-Commerce.WebHooks.Application.Tests"/>
+    </ItemGroup>
 </Project>
