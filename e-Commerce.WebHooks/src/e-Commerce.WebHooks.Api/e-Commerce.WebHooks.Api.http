@@ -1,13 +1,30 @@
 @url = http://localhost:5013
-
+@typeName = test_first_name1
+@addressId = 61491c50-2cf2-454e-b0e0-22648051f7e5
 
 ###
 POST {{url}}/events/add-event
 Content-Type: application/json
 
 {
-    "typeName": "first_test"
+    "typeName": "{{typeName}}"
 }
 
 ###
 GET {{url}}/events
+
+#Addresses
+###
+POST {{url}}/addresses/add-address
+Content-Type: application/json
+
+{
+    "url": "http://tmp3.pl",
+    "eventTypeName": "{{typeName}}"
+}
+
+###
+GET {{url}}/addresses
+
+###
+DELETE {{url}}/addresses/{{addressId}}

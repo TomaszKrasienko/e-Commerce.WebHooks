@@ -13,23 +13,9 @@ public sealed class EventsController : BaseController
     {
     }
 
-    [HttpPost("add-event")]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [SwaggerOperation("Adding new event")]
-    public async Task<ActionResult> Add(AddEventCommand command)
-    {
-        var eventId = Guid.NewGuid();
-        await Mediator.Publish(command with { Id = Guid.NewGuid() });
-        return CreatedAtAction(nameof(GetById), new { eventId }, null);
-    }
-
     [HttpGet("{eventId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [SwaggerOperation("Getting event by Id")]
     public async Task<ActionResult<EventDto>> GetById(Guid id)
     {
         //Todo: To implement
@@ -38,8 +24,16 @@ public sealed class EventsController : BaseController
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [SwaggerOperation("Getting all events")]
     public async Task<ActionResult<IEnumerable<EventDto>>> GetAll(CancellationToken cancellationToken)
         => Ok(await Mediator.Send(new GetAllEventsQuery(), cancellationToken));
+    
+    [HttpPost("add-event")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult> Add(AddEventCommand command, CancellationToken cancellationToken)
+    {
+        var eventId = Guid.NewGuid();
+        await Mediator.Publish(command with { Id = eventId }, cancellationToken);
+        return CreatedAtAction(nameof(GetById), new { eventId }, null);
+    }
 }
