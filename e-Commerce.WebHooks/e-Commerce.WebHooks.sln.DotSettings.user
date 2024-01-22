@@ -9,5 +9,6 @@
     &lt;TestId&gt;xUnit::71A88B1E-3904-4AAE-885C-67FA2900680A::net8.0::e_Commerce.WebHooks.Core.Tests.Entities.AddressTests.New_ForEmptyUrl_ShouldThrowEmptyUrlException&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::71A88B1E-3904-4AAE-885C-67FA2900680A::net8.0::e_Commerce.WebHooks.Core.Tests.Entities.AddressTests.New_ForEmptyEventId_ShouldThrowEmptyEntityIdException&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::71A88B1E-3904-4AAE-885C-67FA2900680A::net8.0::e_Commerce.WebHooks.Core.Tests.Entities.EventTests.AddAddress_ForNotExistingAddress_ShouldAddToAddresses&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::CD964EB1-D0F7-4366-9016-AF2B2B7F496B::net8.0::e_Commerce.WebHooks.Application.Tests.CQRS.Events.Commands.AddEventCommandHandlerTests.Handle_ForNotExistingEvent_ShouldAddEventByRepository&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
