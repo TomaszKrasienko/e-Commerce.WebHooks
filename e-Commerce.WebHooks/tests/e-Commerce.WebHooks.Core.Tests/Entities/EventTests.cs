@@ -60,4 +60,20 @@ public sealed class EventTests
                && x.Url == addressUrl
                && x.EventId == @event.Id).Should().BeTrue();
     }
+    
+    [Fact]
+    public void AddAddress_ForExistingAddress_ShouldThrowAddressAlreadyRegisteredException()
+    {
+        //arrange
+        var @event = new Event(Guid.NewGuid(), "testTypeName");
+        var addressId = Guid.NewGuid();
+        var addressUrl = "test_url";
+        @event.AddAddress(addressId, addressUrl);
+
+        //act
+        var exception = Record.Exception(() => @event.AddAddress(addressId, addressUrl));
+        
+        //assert
+        exception.Should().BeOfType<ThrowAddressAlreadyRegisteredException>();
+    }
 }
