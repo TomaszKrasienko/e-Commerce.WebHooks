@@ -27,7 +27,7 @@ internal sealed class EventRepository : IEventRepository
         => _context
             .Events
             .Include(x => x.Addresses)
-            .SingleOrDefaultAsync(x => x.TypeName == typeName);
+            .SingleOrDefaultAsync(x => (string.IsNullOrWhiteSpace(typeName) || x.TypeName == typeName));
 
     public Task<Event> GetByAddressIdAsync(Guid addressId)
         => _context
@@ -48,6 +48,7 @@ internal sealed class EventRepository : IEventRepository
     }
 
     public Task<bool> IsExistsAsync(string typeName, Guid id)
-        => _context.Events.AnyAsync(y => y.TypeName == typeName || y.Id.Value == id);
+        => _context.Events.AnyAsync(y
+            => y.TypeName == typeName || y.Id.Value == id);
 
 }

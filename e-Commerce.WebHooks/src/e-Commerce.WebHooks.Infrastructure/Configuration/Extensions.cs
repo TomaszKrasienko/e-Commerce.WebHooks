@@ -1,6 +1,7 @@
 using e_Commerce.WebHooks.Infrastructure.DAL.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Exceptions.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Logging.Configuration;
+using e_Commerce.WebHooks.Infrastructure.Validation.Configuration;
 using e_Commerce.WebHooks.Infrastructure.WebHooksDispatcher.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +17,7 @@ public static class Extensions
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         => services
             .AddExceptionHandling()
+            .AddValidation()
             .AddLoggingConfiguration()
             .AddDal(configuration)
             .AddWebHookDispatcher(configuration)
