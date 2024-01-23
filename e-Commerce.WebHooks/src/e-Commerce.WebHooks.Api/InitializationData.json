@@ -1,0 +1,38 @@
+[
+  {
+    "id": "3f2504e0-4f89-41d3-9a0c-0305e82c3301",
+    "typeName": "test1_type_name",
+    "addresses": [
+      {
+        "id": "3f2504e0-4f89-41d3-9a0c-0305e82c3301",
+        "url": "http://test1_type_name1.pl"
+      },
+      {
+        "id": "6a4a1a6d-ecb9-4e0b-8a1d-9f63ed55de61",
+        "url": "http://test1_type_name2.pl"
+      },
+      {
+        "id": "b731d34e-79c2-4a7a-8b58-2c2d8ec2d8f0",
+        "url": "http://test1_type_name3.pl"
+      },
+      {
+        "id": "8fe67eab-2f9a-4a5e-b46d-1ec987e42945",
+        "url": "http://test1_type_name4.pl"
+      }
+    ]
+  },
+  {
+    "id": "a9c08f6a-271c-4a5e-8e66-437a0921555d",
+    "typeName": "test2_type_name",
+    "addresses": [
+      {
+        "id": "d0a3968b-7e08-42a6-b50e-92aaabb8a40d",
+        "url": "http://test2_type_name1.pl"
+      },
+      {
+        "id": "f4e3b7a2-79b3-4ea9-97f8-58171694c9fe",
+        "url": "http://test2_type_name2.pl"
+      }
+    ]
+  }
+]

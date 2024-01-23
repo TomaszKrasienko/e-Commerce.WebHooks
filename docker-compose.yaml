@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  wg-business:
+    container_name: e-commerce-web-hooks
+    build: ./e-Commerce.WebHooks
+    ports: 
+      - 50000:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker

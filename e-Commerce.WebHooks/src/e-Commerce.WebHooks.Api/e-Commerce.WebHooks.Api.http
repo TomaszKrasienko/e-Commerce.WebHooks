@@ -1,7 +1,7 @@
-@url = http://localhost:5013
+# @url = http://localhost:5013
+@url = http://localhost:50000
 @typeName = test_first_name
 @addressId = 22ba05e2-fdca-4c7d-9f9b-30d4bff5129c
-
 @eventId = b5df9646-2c4c-4afa-a878-5a2289805e4c
 
 
