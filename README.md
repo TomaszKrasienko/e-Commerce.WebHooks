@@ -23,4 +23,10 @@ Z tego powodu nie ma migracji oraz konfiguracji connection string.
 ### Logowanie
 Dla logowania jest skonfigurowana paczka "Serilog" wraz z jej dodatkowymi "Sinkami".
 Pozwala na łatwe rozszerzenia docelowego logowania. Obecnie logowanie jest skonfigurowane
-w konsoli oraz w pliku. Ścieżka do pliku jest dostępna w pliku appsettings
+w konsoli oraz w pliku. Ścieżka do pliku jest dostępna w pliku appsettings. 
+Do logowanie w handlerach użyto wzorca dekorator w połączeniu z zaimplementowanym
+CQRS dzięki paczce MediatR.
+
+### Walidacja
+Walidacja jest realizowana przez paczkę FluentValidation. Walidowane są wszystkie 
+klasy implementujące interface INotification (z paczki MediatR) z użyciem wzorca Dekorator.
