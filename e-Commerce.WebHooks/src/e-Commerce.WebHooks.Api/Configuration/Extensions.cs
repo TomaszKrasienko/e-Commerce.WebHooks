@@ -5,10 +5,10 @@ namespace e_Commerce.WebHooks.Api.Configuration;
 
 public static class Extensions
 {
-    public static IServiceCollection AddConfiguration(this IServiceCollection services)
+    public static IServiceCollection AddConfiguration(this IServiceCollection services, IConfiguration configuration)
         => services
             .AddApplication()
-            .AddInfrastructure()
+            .AddInfrastructure(configuration)
             .AddControllersConfiguration();
 
     private static IServiceCollection AddControllersConfiguration(this IServiceCollection services)

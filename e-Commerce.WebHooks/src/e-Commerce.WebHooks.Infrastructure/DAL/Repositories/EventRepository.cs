@@ -14,7 +14,14 @@ internal sealed class EventRepository : IEventRepository
     }
 
     public async Task<IReadOnlyList<Event>> GetAllAsync()
-        => await _context.Events.Include(x => x.Addresses).ToListAsync();
+        => await _context.Events
+            .Include(x => x.Addresses)
+            .ToListAsync();
+
+    public async Task<Event> GetByIdAsync(Guid addressId)
+        => await _context.Events
+            .Include(c => c.Addresses)
+            .SingleOrDefaultAsync(x => x.Id.Value == addressId);
 
     public Task<Event> GetByTypeNameAsync(string typeName)
         => _context

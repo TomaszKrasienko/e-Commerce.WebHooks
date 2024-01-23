@@ -35,7 +35,8 @@ public sealed class DispatchEventCommandHandlerTests
         _webHookDispatcherMock
             .Verify(x => x.Send(
                 It.Is<WebHookDto>(arg => arg.EventNumber == eventNumber && arg.EventTypeName == typeName),
-                It.Is<List<string>>(arg => arg.Contains(address1) && arg.Contains(address2))));
+                It.Is<List<string>>(arg => arg.Contains(address1) && arg.Contains(address2)),
+                default));
     }
 
     [Fact]

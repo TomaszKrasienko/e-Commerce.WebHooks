@@ -1,6 +1,19 @@
 @url = http://localhost:5013
 @typeName = test_first_name
-@addressId = 61491c50-2cf2-454e-b0e0-22648051f7e5
+@addressId = 22ba05e2-fdca-4c7d-9f9b-30d4bff5129c
+
+@eventId = b5df9646-2c4c-4afa-a878-5a2289805e4c
+
+
+###
+POST {{url}}/events
+Content-Type: application/json
+
+{
+    "eventNumber": "string",
+    "eventTypeName": "{{typeName}}"
+}
+
 
 ###
 POST {{url}}/events/add-event
@@ -11,6 +24,9 @@ Content-Type: application/json
 }
 
 ###
+GET {{url}}/events/{{eventId}}
+
+###
 GET {{url}}/events
 
 #Addresses
@@ -19,9 +35,21 @@ POST {{url}}/addresses/add-address
 Content-Type: application/json
 
 {
-    "url": "http://tmp1.pl",
+    "url": "http://localhost:5154/test-one",
     "eventTypeName": "{{typeName}}"
 }
+
+###
+POST {{url}}/addresses/add-address
+Content-Type: application/json
+
+{
+    "url": "http://localhost:5154/test-two",
+    "eventTypeName": "{{typeName}}"
+}
+
+###
+GET {{url}}/addresses/{{addressId}}
 
 ###
 GET {{url}}/addresses

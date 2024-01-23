@@ -1,6 +1,7 @@
 using e_Commerce.WebHooks.Infrastructure.DAL.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Exceptions.Configuration;
 using e_Commerce.WebHooks.Infrastructure.Logging.Configuration;
+using e_Commerce.WebHooks.Infrastructure.WebHooksDispatcher.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,11 +13,12 @@ public static class Extensions
 {
     private const string Title = "e-Commerce.WebHooks";
     
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         => services
             .AddExceptionHandling()
             .AddLoggingConfiguration()
-            .AddDal()
+            .AddDal(configuration)
+            .AddWebHookDispatcher(configuration)
             .AddSwaggerConfiguration();
 
     private static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)

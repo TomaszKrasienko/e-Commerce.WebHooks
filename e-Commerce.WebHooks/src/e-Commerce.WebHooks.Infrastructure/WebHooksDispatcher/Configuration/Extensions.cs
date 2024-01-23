@@ -10,8 +10,10 @@ public static class Extensions
 {
     internal const string WebHookClient = "WebHookHttpClient";
     
-    internal static IServiceCollection AddWebHookDispatcher(this IServiceCollection services)
-        => services;
+    internal static IServiceCollection AddWebHookDispatcher(this IServiceCollection services, IConfiguration configuration)
+        => services
+            .AddHttpClientFactory(configuration)
+            .AddServices();
 
     private static IServiceCollection AddHttpClientFactory(this IServiceCollection services, IConfiguration configuration)
     {

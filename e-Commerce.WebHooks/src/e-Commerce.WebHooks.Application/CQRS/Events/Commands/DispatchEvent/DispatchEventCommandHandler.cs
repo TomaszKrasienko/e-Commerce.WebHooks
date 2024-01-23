@@ -27,6 +27,6 @@ internal sealed class DispatchEventCommandHandler : INotificationHandler<Dispatc
         }
 
         var dto = notification.AsDto();
-        await _webHookDispatcher.Send(dto, @event.Addresses.Select(x => x.Url.Value).ToList());
+        await _webHookDispatcher.Send(dto, @event.Addresses.Select(x => x.Url.Value).ToList(), cancellationToken);
     }
 }

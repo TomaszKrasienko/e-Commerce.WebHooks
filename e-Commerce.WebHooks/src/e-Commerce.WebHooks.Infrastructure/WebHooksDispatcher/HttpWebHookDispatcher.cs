@@ -17,22 +17,22 @@ internal sealed class HttpWebHookDispatcher : IWebHookDispatcher
         _client = httpClientFactory.CreateClient(Extensions.WebHookClient);
     }
     
-    public async Task Send(WebHookDto dto, List<string> addresses)
+    public async Task Send(WebHookDto dto, List<string> addresses, CancellationToken cancellationToken)
     {
         var tasks = new List<Task>();
         foreach (var address in addresses)
         {
-            var task = HandleOne(dto, address);
+            var task = HandleOne(dto, address, cancellationToken);
             tasks.Add(task);
         }
         await Task.WhenAll(tasks);
     }
 
-    private async Task HandleOne(WebHookDto dto, string address)
+    private async Task HandleOne(WebHookDto dto, string address, CancellationToken cancellationToken)
     {
         try
         {
-            var response = await _client.PostAsJsonAsync(address, dto);
+            var response = await _client.PostAsJsonAsync(address, dto, cancellationToken);
             if (response.IsSuccessStatusCode)
             {
                 _logger.LogInformation($"Successfully sent to address {address}");

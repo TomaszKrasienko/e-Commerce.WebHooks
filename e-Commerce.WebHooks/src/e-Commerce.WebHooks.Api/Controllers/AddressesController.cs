@@ -1,5 +1,6 @@
 using e_Commerce.WebHooks.Application.CQRS.Addresses.Commands.AddAddress;
 using e_Commerce.WebHooks.Application.CQRS.Addresses.Commands.DeleteAddress;
+using e_Commerce.WebHooks.Application.CQRS.Addresses.Queries.GetAddressById;
 using e_Commerce.WebHooks.Application.CQRS.Addresses.Queries.GetAllAddresses;
 using e_Commerce.WebHooks.Application.DTOs;
 using MediatR;
@@ -13,15 +14,12 @@ public sealed class AddressesController : BaseController
     public AddressesController(IMediator mediator) : base(mediator)
     {
     }
-    
+
     [HttpGet("{addressId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<EventDto>> GetById(Guid id)
-    {
-        //Todo: To implement
-        return Ok();
-    }
+    public async Task<ActionResult<EventDto>> GetById(Guid addressId, CancellationToken cancellationToken)
+        => Ok(await Mediator.Send(new GetAddressByIdQuery(addressId), cancellationToken));
     
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
